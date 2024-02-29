@@ -1,0 +1,1 @@
+This is a Chrome extension to rephrase text with AI.
