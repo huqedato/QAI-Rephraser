@@ -9,6 +9,7 @@
     "service_worker": "back/index.js",
     "type": "module"
   },
+  "options_page": "options.html",
   "icons": {
     "16": "QAIRephaser-logo-16.png",
     "32": "QAIRephaser-logo-32.png",

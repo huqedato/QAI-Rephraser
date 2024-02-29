@@ -12,6 +12,8 @@ const KEY_ACCESS_TOKEN = "accessToken";
 let prompt = "";
 let apiKey = "";
 
+CORE.storage.sync.set({ model: "gpt-4" }, function () {});
+
 CORE.storage.sync.get(["prompt", "apiKey"], function (items) {
   if (items && items.prompt) {
     prompt = items.prompt;
@@ -81,6 +83,8 @@ async function deleteConversation(conversationId) {
 }
 
 async function getSummary(question, callback) {
+  const model = await chrome.storage.sync.get("model");
+  console.log("model:  ", model["model"]);
   const accessToken = await getAccessToken();
   const messageJson = {
     action: "next",
@@ -97,8 +101,9 @@ async function getSummary(question, callback) {
         },
       },
     ],
-    //model: "text-davinci-002-render",
-    model: "gpt-4",
+    // model: "text-davinci-002-render",
+    //model: "gpt-4",
+    model: model["model"],
     parent_message_id: uuidv4(),
   };
   await fetchSSE("https://chat.openai.com/backend-api/conversation", {
@@ -227,10 +232,6 @@ function combineSummaries(summaries) {
   return combinedSummary;
 }
 
-
-
-
-
 //
 /// Business logic for the extension
 //
@@ -243,8 +244,6 @@ chrome.runtime.onInstalled.addListener(function () {
   });
 });
 
-
-
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
   if (info.menuItemId == "QAIRephraser") {
     let selectedText = info.selectionText;
@@ -256,12 +255,11 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
   }
 });
 
-
 function QAIModal(text) {
   const modalContainer = document.createElement("div");
   modalContainer.id = "QAIModalContainer";
   modalContainer.style.cssText = `
-    font-family: Arial, sans-serif;
+    font-family: Dejavu Sans, Arial, Verdana, sans-serif;
     position: fixed;
     top: 0;
     left: 0;
@@ -273,7 +271,6 @@ function QAIModal(text) {
     justify-content: center;
     align-items: center;
   `;
-
 
   const modalContent = document.createElement("div");
   modalContent.id = "QAIModalContent";
@@ -306,7 +303,7 @@ function QAIModal(text) {
   closeButton.onclick = function () {
     modalContainer.remove();
   };
-  
+
   const modalInnerContent = document.createElement("div");
   modalInnerContent.style.cssText = `
     padding: 0.8em;
@@ -315,7 +312,6 @@ function QAIModal(text) {
   modalInnerContent.ondblclick = () => {
     modalInnerContent.innerText = "Wating for AI...";
     port.postMessage({ content: text });
-   
   };
   modalInnerContent.onclick = () => copyToClipboard();
 
@@ -369,6 +365,4 @@ function QAIModal(text) {
     }
   });
   port.postMessage({ content: text });
-
 }
-
