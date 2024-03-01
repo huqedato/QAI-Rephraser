@@ -11,7 +11,7 @@ QAI Rephraser is a Chrome extension that leverages GPT models to rephrase select
 - **Rephrasing Iterations**: Double-click the popup to re-send the original text for another rephrase iteration.
 
 ## Installation
-1. Download the extension from the Chrome Web Store.
+1. Download the extension from the Chrome Web Store (not yet available)
 2. Add it to your Chrome browser.
 3. No additional setup is required.
 
@@ -22,18 +22,23 @@ QAI Rephraser is a Chrome extension that leverages GPT models to rephrase select
 4. Interact with the popup window as per your preference to copy or rephrase the text.
 
 ## Options
-**Model Selection**: Access the extension settings to select your preferred GPT model for rephrasing.
+**Model Selection**: Access the extension's Options to select your preferred GPT model. 
+To use it, you'll need a ChatGPT account. Additionally, if you wish to utilize GPT-4, a ChatGPT Plus subscription is required.
+
+## TODO
+- [ ] Add support for GPT API.
+- [ ] Develop a version for Mozilla Firefox
+- [ ] Develop a mobile version of the extension.
 
 ## Privacy
-We value your privacy. The extension does not store any of your data.
-
-## Support
-For any queries or support, please contact [support email].
+The extension does not store any of your data.
 
 ## Contribution
-Contributions to the project are welcome. Please refer to our contribution guidelines.
+I'm committed to maintaining a minimalist approach for this project, focusing solely on essential functionality. Those interested in expanding its capabilities are encouraged to create a fork. While contributions are appreciated, they should be limited to bug fixes only.
 
 ## License
+Copyright © 2024 Quda Theo.
+
 This project is licensed under MIT License.
 
 ## Disclaimer
