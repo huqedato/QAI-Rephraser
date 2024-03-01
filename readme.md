@@ -42,4 +42,4 @@ Copyright © 2024 Quda Theo.
 This project is licensed under MIT License.
 
 ## Disclaimer
-This extension uses GPT models and the output is dependent on the selected model. The developer are not responsible for the accuracy or content of the generated text.
+This extension uses GPT models and the output is dependent on the selected model. The developer is not responsible for the accuracy or content of the generated text.
