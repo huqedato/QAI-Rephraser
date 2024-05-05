@@ -1,7 +1,7 @@
 {
   "name": "qairephraser",
   "private": true,
-  "version": "2.0.1",
+  "version": "2.0.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,12 +10,6 @@
   },
   "devDependencies": {
     "@crxjs/vite-plugin": "^2.0.0-beta.23",
-    "eventsource-parser": "^1.1.2",
-    "expiry-map": "^2.0.0",
-    "uuid": "^9.0.1",
     "vite": "^5.1.4"
-  },
-  "dependencies": {
-    "openai": "^4.40.2"
   }
 }

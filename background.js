@@ -73,7 +73,7 @@ function QAIModal(text, modelRole) {
   `;
 
   modalInnerContent.ondblclick = () => {
-    modalInnerContent.innerText = "Wating for AI...";
+    modalInnerContent.innerText = "Waiting for AI...";
     port.postMessage({ content: text });
   };
   modalInnerContent.onclick = () => copyToClipboard();
@@ -83,7 +83,7 @@ function QAIModal(text, modelRole) {
     (async () => await navigator.clipboard.writeText(text))();
   }
 
-  modalInnerContent.innerHTML = "Wating for AI...";
+  modalInnerContent.innerHTML = "Waiting for AI...";
   modalContent.appendChild(modalInnerContent);
   modalContainer.appendChild(modalContent);
   document.body.appendChild(modalContainer);
