@@ -1,7 +1,7 @@
 {
   "name": "qairephraser",
   "private": true,
-  "version": "1.0.0",
+  "version": "2.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -14,5 +14,8 @@
     "expiry-map": "^2.0.0",
     "uuid": "^9.0.1",
     "vite": "^5.1.4"
+  },
+  "dependencies": {
+    "openai": "^4.40.2"
   }
 }

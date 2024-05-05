@@ -7,7 +7,7 @@
   "host_permissions": ["https://*.openai.com/"],
   "permissions": ["storage", "activeTab", "scripting", "contextMenus"],
   "background": {
-    "service_worker": "back/index.js",
+    "service_worker": "background.js",
     "type": "module"
   },
   "options_page": "options.html",

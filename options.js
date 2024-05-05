@@ -20,5 +20,24 @@ const restoreOptions = () => {
   });
 };
 
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("OpenAIAPIKeyForm");
+  chrome.storage.sync.get("apiKey", function (data) {
+    document.getElementById("apiKey").value = data.apiKey || "";
+  });
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const apiKey = document.getElementById("apiKey").value;
+    chrome.storage.sync.set({ openaiApiKey: apiKey }, function () {
+      var status = document.getElementById("status");
+      status.textContent = "Options saved.";
+      setTimeout(function () {
+        status.textContent = "";
+      }, 500);
+    });
+  });
+});
+
 document.addEventListener("DOMContentLoaded", restoreOptions);
 document.getElementById("save").addEventListener("click", saveOptions);
