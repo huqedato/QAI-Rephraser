@@ -132,7 +132,7 @@ function QAIModal(text, modelRole) {
     const url = "https://api.openai.com/v1/chat/completions";
     const params = {
       prompt: prompt,
-      temperature: 0.5,
+      temperature:  Math.random() * 2 * 0.1 + 0.5
     };
 
     if (!openaiApiKey) {
