@@ -23,14 +23,16 @@ function QAIModal(text, modelRole) {
   const modalContainer = document.createElement("div");
   modalContainer.id = "QAIModalContainer";
   modalContainer.style.cssText = `
-    font-family: Dejavu Sans, Arial, Verdana, sans-serif;
+    font-family: system-ui;
+    font-weight: 400;
+    line-height: 1.5em;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 10000;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.5); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,11 +42,11 @@ function QAIModal(text, modelRole) {
   modalContent.id = "QAIModalContent";
   modalContent.style.cssText = `
     padding: 0.8em;
-    width: 50vw;
+    width: 55vw;
     height: auto;
-    font-size: 16px;
+    font-size: 17px;
     background-color: #0e131e;
-    color: #ddd;
+    color: #eee;
     overflow-y: auto; 
     box-sizing: border-box;
     position: relative;
