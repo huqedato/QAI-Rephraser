@@ -5,7 +5,7 @@ IMPORTANT: You will use the same language of the input text ! Given a text input
 If needed for creating a better result, You will re-compose and restructure the phrases or will change the order of sentences. 
 `;chrome.runtime.onInstalled.addListener(function(){chrome.contextMenus.create({id:"QAIRephraser",title:"Rephrase with AI",contexts:["selection"]})});chrome.contextMenus.onClicked.addListener(function(r,c){if(r.menuItemId=="QAIRephraser"){let t=r.selectionText;chrome.scripting.executeScript({target:{tabId:c.id},func:v,args:[t,x]})}});function v(r,c){const t=document.createElement("div");t.id="QAIModalContainer",t.style.cssText=`
     font-family: system-ui;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.5em;
     position: fixed;
     top: 0;

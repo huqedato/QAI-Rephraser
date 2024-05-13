@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "QAI Rephraser",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Rephrase text using OpenAI's ChatGPT",
   "action": {},
   "host_permissions": ["https://*.openai.com/"],
